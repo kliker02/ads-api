@@ -1,0 +1,19 @@
+{
+    "name": "kliker02/vcru-task",
+    "autoload": {
+        "psr-4": {
+            "Kliker02\\VcruTask\\": "app/src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Aleksandr",
+            "email": "laker.tv@bk.ru"
+        }
+    ],
+    "require": {
+        "laminas/laminas-router": "^3.4",
+        "ext-json": "*",
+        "laminas/laminas-db": "^2.13"
+    }
+}
