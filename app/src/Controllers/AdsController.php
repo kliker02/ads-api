@@ -156,12 +156,12 @@ class AdsController extends AbstractController
                 'text' => $row->Text,
                 'banner' => $row->Banner,
             ];
+
+            $tblAd->update(['Shown' => $row->Shown+1], ['id'=>$row->ID]);
+
+            $tblView = new Ad\View\ViewTable($this->getServiceManager());
+            $tblView->insert(['Price' => $row->Price, 'Ad_ID' => $row->ID]);
         }
-
-        $tblAd->update(['Shown' => $row->Shown+1], ['id'=>$row->ID]);
-
-        $tblView = new Ad\View\ViewTable($this->getServiceManager());
-        $tblView->insert(['Price' => $row->Price, 'Ad_ID' => $row->ID]);
 
         $response['message'] = 'OK';
         return new JsonRenderer($response);
