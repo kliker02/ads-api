@@ -31,7 +31,7 @@ return [
     'database' => [
         'driver' => 'Mysqli',
         'database' => 'ads_project',
-        'username' => 'mysql',
-        'password' => 'mysql',
+        'username' => 'root',
+        'password' => '',
     ]
 ];
