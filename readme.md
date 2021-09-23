@@ -12,7 +12,7 @@ Build and configure docker image:
     docker build -t test-task .
     docker run -p 8080:80 test-task
     docker exec Container_ID mysql -uroot -e "create database ads_project"  
-    docker exec Container_ID php install/install.php
+    docker exec Container_ID php /app/app/install/install.php
 
 # Routes
 
