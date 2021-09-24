@@ -21,7 +21,7 @@ class AdsController extends AbstractController
 {
     public function add()
     {
-        $response = ['message' => '', 'code' => Response::STATUS_CODE_200, 'data' => null];
+        $response = ['message' => '', 'code' => Response::STATUS_CODE_200, 'data' => new \stdClass()];
 
         if (!$this->getRequest()->isPost()) {
             $this->getResponse()->setStatusCode(Response::STATUS_CODE_404);
@@ -86,7 +86,7 @@ class AdsController extends AbstractController
             throw new \Exception('Invalid method');
         }
 
-        $response = ['message' => '', 'code' => Response::STATUS_CODE_200, 'data' => null];
+        $response = ['message' => '', 'code' => Response::STATUS_CODE_200, 'data' => new \stdClass()];
 
         $id = intval($RouteParams->getParam('id'));
 
@@ -146,7 +146,7 @@ class AdsController extends AbstractController
      */
     public function relevant(RouteParamsInterface $RouteParams)
     {
-        $response = ['message' => '', 'code' => Response::STATUS_CODE_200, 'data' => null];
+        $response = ['message' => '', 'code' => Response::STATUS_CODE_200, 'data' => new \stdClass()];
 
         $tblAd = new AdTable($this->getServiceManager());
         $row = $tblAd->getRelevant();

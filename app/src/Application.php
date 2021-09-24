@@ -99,7 +99,7 @@ class Application
 
             if (!strlen($this->response->getContent())) {
                 $this->response->setContent(json_encode(
-                    ['message' => $e->getMessage(), 'code' => $this->response->getStatusCode(), 'data' => null]
+                    ['message' => $e->getMessage(), 'code' => $this->response->getStatusCode(), 'data' => new \stdClass()]
                 ));
             }
         }
