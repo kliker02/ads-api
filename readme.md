@@ -10,9 +10,7 @@ Change dir:
 Build and configure docker image:
 
     docker build -t test-task .
-    docker run -p 8080:80 test-task
-    docker exec Container_ID mysql -uroot -e "create database ads_project"  
-    docker exec Container_ID php /app/app/install/install.php
+    docker run -i -t -p "8080:80" -v %cd%:/app -v %cd%/mysql:/var/lib/mysql test-task
 
 # Routes
 
