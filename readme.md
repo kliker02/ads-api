@@ -6,11 +6,20 @@ Run the following to clone this repo:
 Change dir: 
 
     cd ads-api
+    
+Install dependencies: 
+
+    composer install
 
 Build and configure docker image:
 
     docker build -t test-task .
-    docker run -i -t -p "8080:80" -v %cd%:/app -v %cd%/mysql:/var/lib/mysql test-task
+    docker run -i -t -p "8080:80" -p "9906:3306" -v %cd%:/app -v %cd%/mysql:/var/lib/mysql test-task
+    
+Optional(for connecting out of container):
+
+    docker exec Container_ID mysql -uroot -e "ALTER USER 'admin' IDENTIFIED BY 'admin';"
+
 
 # Routes
 
